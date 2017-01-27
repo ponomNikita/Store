@@ -8,5 +8,6 @@ namespace Store.Domain.Enums
 {
     public enum EProductType
     {
+        Unknown = 0,
     }
 }
