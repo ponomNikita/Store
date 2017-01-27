@@ -15,6 +15,7 @@ namespace Store.Controllers
         {
             _logger = LoggerManager.GetLogger(GetType());
         }
+
         // GET: Products
         public ActionResult Index()
         {
