@@ -10,14 +10,21 @@ namespace Store.Domain.Services
 {
     public class ProductService : IProductService
     {
+        private IRepository<Product> _repository;
+
+        public ProductService(IRepository<Product> repository)
+        {
+            _repository = repository;
+        }
+
         public Product Get(int id)
         {
-            throw new NotImplementedException();
+            return _repository.Get(id);
         }
 
         public List<Product> GetAll()
         {
-            throw new NotImplementedException();
+            return _repository.Get().ToList();
         }
 
         public void Add(Product product)

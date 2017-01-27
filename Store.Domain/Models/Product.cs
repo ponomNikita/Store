@@ -7,7 +7,7 @@ using Store.Domain.Enums;
 
 namespace Store.Domain.Models
 {
-    public partial class Product
+    public partial class Product : TEntity
     {
         public int Id { get; set; }
 

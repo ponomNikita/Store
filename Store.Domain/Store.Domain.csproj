@@ -41,8 +41,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contracts\IProductService.cs" />
+    <Compile Include="Contracts\IRepository.cs" />
     <Compile Include="Enums\EProductType.cs" />
     <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\TEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ProductService.cs" />
   </ItemGroup>
