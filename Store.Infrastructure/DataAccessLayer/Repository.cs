@@ -24,7 +24,7 @@ namespace Store.Infrastructure.DataAccessLayer
 
         public bool Any(Expression<Func<T, bool>> predicate)
         {
-            return Get().Any(predicate);
+            return _dbSet.Any(predicate);
         }
 
         public T Create(T item)
