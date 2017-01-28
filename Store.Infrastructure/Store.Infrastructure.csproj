@@ -53,8 +53,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DAL\DataBaseContext.cs" />
-    <Compile Include="DAL\Repository.cs" />
+    <Compile Include="DataAccessLayer\DataBaseContext.cs" />
+    <Compile Include="DataAccessLayer\Repository.cs" />
     <Compile Include="Logging\ILogger.cs" />
     <Compile Include="Logging\Logger.cs" />
     <Compile Include="Logging\LoggerManager.cs" />
