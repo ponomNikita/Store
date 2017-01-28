@@ -27,6 +27,11 @@ namespace Store.Infrastructure.DataAccessLayer
             return _dbSet.Any(predicate);
         }
 
+        public IEnumerable<T> GetBySpecification(ISpecification<T> spesification)
+        {
+            return _dbSet.Where(spesification.IsSatisfiedBy).ToList();
+        }
+
         public T Create(T item)
         {
             return _dbSet.Add(item);
@@ -46,12 +51,12 @@ namespace Store.Infrastructure.DataAccessLayer
             return _dbSet.FirstOrDefault(o => o.EntityId == id);
         }
 
-        public virtual IQueryable<T> Get()
+        public virtual IEnumerable<T> Get()
         {
-            return _dbSet;
+            return _dbSet.ToList();
         }
 
-        public IQueryable<T> Include(Expression<Func<T, object>> predicate)
+        public IEnumerable<T> Include(Expression<Func<T, object>> predicate)
         {
             return _dbSet.Include(predicate);
         }
@@ -65,11 +70,6 @@ namespace Store.Infrastructure.DataAccessLayer
         public void Save()
         {
             _db.SaveChanges();
-        }
-
-        public IQueryable<T> Where(Expression<Func<T, bool>> predicate)
-        {
-            return _dbSet.Where(predicate);
         }
     }
 }
