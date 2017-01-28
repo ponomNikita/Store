@@ -30,5 +30,6 @@ namespace Store.Infrastructure.DataAccessLayer
                 return _instance;
             }
         }
+
     }
 }

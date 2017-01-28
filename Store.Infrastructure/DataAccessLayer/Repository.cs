@@ -39,7 +39,7 @@ namespace Store.Infrastructure.DataAccessLayer
 
         public void Delete(int id)
         {
-            var entity = _dbSet.FirstOrDefault(o => o.EntityId == id);
+            var entity = _dbSet.FirstOrDefault(o => o.Id == id);
             if (entity != null)
             {
                 _dbSet.Remove(entity);
@@ -48,7 +48,7 @@ namespace Store.Infrastructure.DataAccessLayer
 
         public T Get(int id)
         {
-            return _dbSet.FirstOrDefault(o => o.EntityId == id);
+            return _dbSet.FirstOrDefault(o => o.Id == id);
         }
 
         public virtual IEnumerable<T> Get()

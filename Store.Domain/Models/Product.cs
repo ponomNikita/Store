@@ -7,9 +7,9 @@ using Store.Domain.Enums;
 
 namespace Store.Domain.Models
 {
-    public partial class Product : TEntity
+    public class Product : TEntity
     {
-        public int Id { get; set; }
+        public new int Id { get; set; }
 
         public string Name { get; set; }
 
@@ -18,14 +18,5 @@ namespace Store.Domain.Models
         public string Description { get; set; }
 
         public int Type { get; set; }
-    }
-
-    public partial class Product
-    {
-        public EProductType ProductType
-        {
-            get { return (EProductType)Type; }
-            set { Type = (int) value; }
-        }
     }
 }
