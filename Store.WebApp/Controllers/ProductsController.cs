@@ -22,5 +22,6 @@ namespace Store.Controllers
             _logger.Info("Index()");
             return View();
         }
+
     }
 }

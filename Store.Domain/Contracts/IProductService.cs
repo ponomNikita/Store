@@ -5,7 +5,7 @@ using Store.Domain.Models;
 
 namespace Store.Domain.Contracts
 {
-    interface IProductService
+    public interface IProductService
     {
         Product Get(int id);
 
