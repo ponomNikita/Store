@@ -11,7 +11,9 @@ namespace Store.Domain.Contracts
 
         List<Product> GetAll();
 
-        void Add(Product product);
+        List<Product> GetBySpecification(ISpecification<Product> specification);
+
+        Product Add(Product product);
 
         void Update(Product product);
 

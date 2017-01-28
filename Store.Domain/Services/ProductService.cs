@@ -10,7 +10,7 @@ namespace Store.Domain.Services
 {
     public class ProductService : IProductService
     {
-        private IRepository<Product> _repository;
+        private readonly IRepository<Product> _repository;
 
         public ProductService(IRepository<Product> repository)
         {
@@ -27,19 +27,29 @@ namespace Store.Domain.Services
             return _repository.Get().ToList();
         }
 
-        public void Add(Product product)
+        public List<Product> GetBySpecification(ISpecification<Product> specification)
         {
-            throw new NotImplementedException();
+            return _repository.GetBySpecification(specification).ToList();
+        }
+
+        public Product Add(Product product)
+        {
+            var newProduct = _repository.Add(product);
+            _repository.Save();
+
+            return newProduct;
         }
 
         public void Update(Product product)
         {
-            throw new NotImplementedException();
+            _repository.Update(product);
+            _repository.Save();
         }
 
         public void Delete(int id)
         {
-            throw new NotImplementedException();
+            _repository.Delete(id);
+            _repository.Save();
         }
     }
 }

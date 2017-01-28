@@ -32,7 +32,7 @@ namespace Store.Infrastructure.DataAccessLayer
             return _dbSet.Where(spesification.IsSatisfiedBy).ToList();
         }
 
-        public T Create(T item)
+        public T Add(T item)
         {
             return _dbSet.Add(item);
         }

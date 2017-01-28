@@ -20,7 +20,7 @@ namespace Store.Domain.Contracts
 
         IEnumerable<T> GetBySpecification(ISpecification<T> spesification);
 
-        T Create(T item);
+        T Add(T item);
 
         void Update(T item);
 
