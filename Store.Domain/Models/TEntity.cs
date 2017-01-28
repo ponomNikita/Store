@@ -11,8 +11,6 @@ namespace Store.Domain.Models
     public class TEntity
     {
         [Key]
-        public int Id { get; set; }
-        [NotMapped]
-        public int FeatureId { get; set; }
+        public virtual int Id { get; set; }
     }
 }

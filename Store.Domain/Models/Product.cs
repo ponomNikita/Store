@@ -9,7 +9,7 @@ namespace Store.Domain.Models
 {
     public class Product : TEntity
     {
-        public new int Id { get; set; }
+        public override int Id { get; set; }
 
         public string Name { get; set; }
 
