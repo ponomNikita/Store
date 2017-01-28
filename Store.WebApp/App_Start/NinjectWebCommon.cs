@@ -1,5 +1,6 @@
 using Store.Domain.Services;
 using Store.Domain.Contracts;
+using Store.Infrastructure.DataAccessLayer;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Store.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(Store.App_Start.NinjectWebCommon), "Stop")]
@@ -65,6 +66,7 @@ namespace Store.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IProductService>().To<ProductService>();
+            kernel.Bind(typeof(IRepository<>)).To(typeof(Repository<>));
         }        
     }
 }
