@@ -10,6 +10,14 @@ productsApp.factory("productsFactory",
             getProducts: function (callback) {
                 $http.get("Products/GetContent")
                     .then(callback);
+            },
+            find : function(id) {
+                var result = products.find(function(entity) {
+                    return ':' + entity.Id === id;
+                });
+                console.log(result);
+
+                return result;
             }
         };
     });
@@ -28,6 +36,12 @@ productsApp.controller('productsController',
         }
     });
 
+productsApp.controller('productDetailController',
+    function ($scope, $routeParams, productsFactory) {
+        console.log($routeParams.id);
+        $scope.product = productsFactory.find($routeParams.id);
+    });
+
 productsApp.config(['$locationProvider', '$routeProvider',
     function config($locationProvider, $routeProvider) {
         //$locationProvider.html5Mode(true);
@@ -38,6 +52,11 @@ productsApp.config(['$locationProvider', '$routeProvider',
             {
                 templateUrl: "Products/Content",
                 controller: "productsController"
-            });
+            })
+            .when('/details:id',
+                {
+                    templateUrl: "Products/Details",
+                    controller: "productDetailController"
+                });
     }
 ]);
