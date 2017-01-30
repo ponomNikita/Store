@@ -12,5 +12,8 @@ namespace Store.Domain.Models
     {
         [Key]
         public virtual int Id { get; set; }
+
+        [NotMapped]
+        public int FeatureId { get; set; }
     }
 }

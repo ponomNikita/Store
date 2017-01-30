@@ -15,8 +15,9 @@ namespace Store.Infrastructure.DataAccessLayer
         public DataBaseContext() : base("Store")
         { }
 
-        public DbSet<Product> Users { get; set; }
-        
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Attachment> Attachments { get; set; }
+
 
         public static DataBaseContext GetDbContext()
         {
