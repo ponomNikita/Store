@@ -24,7 +24,7 @@ productsApp.factory("productsFactory",
 
 
 productsApp.controller('productsController',
-    function ($scope, productsFactory) {
+    function ($scope, productsFactory, $location) {
 
         if (typeof products[0] === 'undefined') {
             productsFactory.getProducts(function (response) {
@@ -34,6 +34,12 @@ productsApp.controller('productsController',
         } else {
             $scope.products = products;
         }
+
+        $scope.go = function (id) {
+            console.log(id);
+            $location.path("details:" + id);
+        };
+
     });
 
 productsApp.controller('productDetailController',

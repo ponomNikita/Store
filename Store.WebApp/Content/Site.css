@@ -1,6 +1,6 @@
 ﻿body {
-    padding-top: 50px;
     padding-bottom: 20px;
+    background-image: url("images/background1.jpg");
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -22,18 +22,60 @@ select,
 textarea {
     max-width: 280px;
 }
+/* Header area */
 
-/*Content area*/
+.header {
+    -ms-border-radius: 7px;
+    border-radius: 7px;
+    background-image: url("http://images.naldzgraphics.net/2012/06/1-Kiss_Me_Goodnight.jpg");    
+}
+
+.logo > img {
+    max-width: 150px;
+}
+
+.logo {
+    text-shadow:2px 1px 5px rgba(72,36,255,0.9);
+    font-weight:bold;
+    font-style:italic;
+    color:#E7ED32;
+    letter-spacing:3pt;
+    word-spacing:7pt;
+    font-size:42px;
+    text-align:left;
+    font-family:georgia, serif;
+    line-height:2;
+    margin:0px;
+    padding:0px;
+}
+
+/* Content area */
 
 .previewImage {
-    max-width: 100px;
+    max-width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .previewProduct {
-    
+    background: rgba(197, 204, 250, 0.5);
 }
 
 .previewProduct:hover {
-    background: #dcf9fb;
-    background: rgba(220, 249, 251, 0.22); /* Цвет фона под ссылкой */
+    background: #a1acf8;
+    background: rgba(161, 172, 248, 0.4);
+    cursor: pointer;
+}
+
+.previewProduct > a, h3, h4 {
+    text-align: center;
+}
+
+.previewProduct > h4, a {
+    color: brown;
+}
+
+.previewProduct > a:hover {
+    color: brown;
 }
