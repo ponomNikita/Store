@@ -1,12 +1,18 @@
 ﻿body {
     padding-bottom: 20px;
-    background-image: url("images/background1.jpg");
+    background-image: url("images/background.png");
+    background-repeat: repeat;
+    background-size: 10%;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    width: 80%;
+}
+.underHeader {
+    
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -25,14 +31,23 @@ textarea {
 /* Header area */
 
 .header {
-    -ms-border-radius: 7px;
-    border-radius: 7px;
-    background-image: url("http://images.naldzgraphics.net/2012/06/1-Kiss_Me_Goodnight.jpg");    
+    background-image: url("images/headerBack.jpg");
+    background-size:auto 100%;          
+    height: 150px;
+    box-shadow: 2px 2px 2px #888888;
 }
 
-.logo > img {
-    max-width: 150px;
+
+ .headerText {
+  font-size: 80px;
+  font-family: "Segoe UI";
+  color: rgb(227, 242, 57);
+  font-weight: bold;
+  font-style: italic;
+  line-height: 1.2;
+  z-index: 3;
 }
+
 
 .logo {
     text-shadow:2px 1px 5px rgba(72,36,255,0.9);
@@ -56,6 +71,8 @@ textarea {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    width: 90%;
+    height: auto;
 }
 
 .previewProduct {

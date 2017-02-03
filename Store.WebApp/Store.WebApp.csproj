@@ -180,7 +180,11 @@
     <Content Include="App_Data\SqlScripts\InsertProducts.sql" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\background.png" />
     <Content Include="Content\images\background1.jpg" />
+    <Content Include="Content\images\headerBack.jpg" />
+    <Content Include="Content\images\headerText.png" />
+    <Content Include="Content\images\headerV1.jpg" />
     <Content Include="Content\images\logo.png" />
     <Content Include="Content\images\nameForLogo.png" />
     <Content Include="favicon.ico" />
