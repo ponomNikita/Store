@@ -20,18 +20,29 @@ namespace Store.ViewModels
 
         public Product Data { get;}
 
-        private List<Attachment> _attachments;
+        private List<AttachmentViewModel> _attachmentViewModels;
 
-        public List<Attachment> Attachments
+        public List<AttachmentViewModel> Attachments
         {
             get
             {
                 GetAttachmentByEntityAndFeatureIdSpecification spec =
                     new GetAttachmentByEntityAndFeatureIdSpecification(Data.Id, Data.FeatureId);
 
-                _attachments = _attachments ?? _attachmentService.GetBySpecification(spec);
+                if (_attachmentViewModels != null)
+                {
+                    return _attachmentViewModels;
+                }
+                var attachments = _attachmentService.GetBySpecification(spec);
 
-                return _attachments;
+                _attachmentViewModels = new List<AttachmentViewModel>();
+
+                attachments.ForEach(attachment =>
+                {
+                    _attachmentViewModels.Add(new AttachmentViewModel(attachment));
+                });
+
+                return _attachmentViewModels;
             }
         }
     }

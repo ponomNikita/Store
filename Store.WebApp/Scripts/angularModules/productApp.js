@@ -33,7 +33,7 @@ productsApp.controller('productsController',
         } else {
             $scope.products = products;
         }
-
+        console.log($scope.products);
         $scope.go = function (id) {
             $location.path("details:" + id);
         };

@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace Store.Domain.Enums
 {
-    public enum EProductType
+    public enum EAttachmentTypes
     {
-        Unknown = 0,
-        Bed = 1,
+        Image = 1,
     }
 }

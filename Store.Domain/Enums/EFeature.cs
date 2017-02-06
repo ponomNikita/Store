@@ -9,6 +9,6 @@ namespace Store.Domain.Enums
     public enum EFeature
     {
         Product = 1,
-        Attachment = 1,
+        Attachment = 2,
     }
 }
