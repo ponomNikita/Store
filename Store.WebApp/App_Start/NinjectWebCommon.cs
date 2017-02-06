@@ -66,6 +66,7 @@ namespace Store.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IProductService>().To<ProductService>();
+            kernel.Bind<IAttachmentService>().To<AttachmentService>();
             kernel.Bind(typeof(IRepository<>)).To(typeof(Repository<>));
         }        
     }

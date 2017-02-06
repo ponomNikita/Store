@@ -10,15 +10,13 @@ namespace Store.Domain.Contracts
 {
     public interface IRepository<T> where T : TEntity
     {
-        IEnumerable<T> Get();
-
-        T Get(int id);
-
         bool Any(Expression<Func<T, bool>> predicate);
 
         IEnumerable<T> Include(Expression<Func<T, object>> predicate);
 
         IEnumerable<T> GetBySpecification(ISpecification<T> spesification);
+
+        T FirstOrDefault(ISpecification<T> spesification);
 
         T Add(T item);
 

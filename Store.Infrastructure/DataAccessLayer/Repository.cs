@@ -46,16 +46,6 @@ namespace Store.Infrastructure.DataAccessLayer
             }
         }
 
-        public T Get(int id)
-        {
-            return _dbSet.FirstOrDefault(o => o.Id == id);
-        }
-
-        public virtual IEnumerable<T> Get()
-        {
-            return _dbSet.ToList();
-        }
-
         public IEnumerable<T> Include(Expression<Func<T, object>> predicate)
         {
             return _dbSet.Include(predicate);
@@ -70,6 +60,11 @@ namespace Store.Infrastructure.DataAccessLayer
         public void Save()
         {
             _db.SaveChanges();
+        }
+
+        public T FirstOrDefault(ISpecification<T> spesification)
+        {
+            return _dbSet.FirstOrDefault(spesification.IsSatisfiedBy);
         }
     }
 }

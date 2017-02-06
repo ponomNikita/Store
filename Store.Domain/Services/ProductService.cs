@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Store.Domain.Contracts;
 using Store.Domain.Models;
+using Store.Domain.Specifications.Product;
 
 namespace Store.Domain.Services
 {
@@ -19,12 +20,14 @@ namespace Store.Domain.Services
 
         public Product Get(int id)
         {
-            return _repository.Get(id);
+            GetProductByIdSpecification spec = new GetProductByIdSpecification(id);
+            return _repository.FirstOrDefault(spec);
         }
 
         public List<Product> GetAll()
         {
-            return _repository.Get().ToList();
+            GetAllProductsSpecification spec = new GetAllProductsSpecification();
+            return _repository.GetBySpecification(spec).ToList();
         }
 
         public List<Product> GetBySpecification(ISpecification<Product> specification)
