@@ -1,4 +1,5 @@
-﻿body {
+﻿html { overflow-y: scroll; }
+body {
     padding-bottom: 20px;
     background-image: url("images/background.png");
     background-repeat: repeat;
@@ -91,6 +92,7 @@ textarea {
 
 .previewProduct > h4, a {
     color: brown;
+    padding: 5px;
 }
 
 .previewProduct > a:hover {
