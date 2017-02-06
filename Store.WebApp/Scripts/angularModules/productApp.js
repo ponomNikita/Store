@@ -13,9 +13,8 @@ productsApp.factory("productsFactory",
             },
             find : function(id) {
                 var result = products.find(function(entity) {
-                    return ':' + entity.Id === id;
+                    return ':' + entity.Data.Id === id;
                 });
-                console.log(result);
 
                 return result;
             }
@@ -36,7 +35,6 @@ productsApp.controller('productsController',
         }
 
         $scope.go = function (id) {
-            console.log(id);
             $location.path("details:" + id);
         };
 
@@ -44,7 +42,6 @@ productsApp.controller('productsController',
 
 productsApp.controller('productDetailController',
     function ($scope, $routeParams, productsFactory) {
-        console.log($routeParams.id);
         $scope.product = productsFactory.find($routeParams.id);
     });
 

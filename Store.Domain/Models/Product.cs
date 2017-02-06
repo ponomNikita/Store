@@ -19,10 +19,13 @@ namespace Store.Domain.Models
 
         [Display(Name = "Название")]
         public string Name { get; set; }
+
         [Display(Name = "Цена")]
         public float Price { get; set; }
+
         [Display(Name = "Описание")]
         public string Description { get; set; }
+
         [Display(Name = "Тип")]
         public int Type { get; set; }
     }

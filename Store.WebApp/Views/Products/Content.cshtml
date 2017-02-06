@@ -2,30 +2,30 @@
 <div class="container">
     <div class="row">       
         <div class="col-lg-3 col-md-4 col-sm-5 col-xs-7" ng-repeat="product in products" >  
-            <div class="previewProduct" ng-click="go(product.Id)">
-                <h4>{{product.Name}}</h4>
+            <div class="previewProduct" ng-click="go(product.Data.Id)">
+                <h4>{{product.Data.Name}}</h4>
                 <img class="previewImage"
                      src="http://vashalyalya.ru/uplfile/vashalyalya.ru/user/172101025072422.jpg" />
 
-                <h4>{{product.Price}} р.</h4>
+                <h4>{{product.Data.Price}} р.</h4>
             </div>
         </div>    
         <div class="col-lg-3 col-md-4 col-sm-5 col-xs-7" ng-repeat="product in products">
-            <div class="previewProduct" ng-click="go(product.Id)">
-                <h4>{{product.Name}}</h4>
+            <div class="previewProduct" ng-click="go(product.Data.Id)">
+                <h4>{{product.Data.Name}}</h4>
                 <img class="previewImage"
                      src="http://vashalyalya.ru/uplfile/vashalyalya.ru/user/172101025072422.jpg" />
 
-                <h4>{{product.Price}} р.</h4>
+                <h4>{{product.Data.Price}} р.</h4>
             </div>
         </div>    
         <div class="col-lg-3 col-md-4 col-sm-5 col-xs-7" ng-repeat="product in products">
-            <div class="previewProduct" ng-click="go(product.Id)">
-                <h4>{{product.Name}}</h4>
+            <div class="previewProduct" ng-click="go(product.Data.Id)">
+                <h4>{{product.Data.Name}}</h4>
                 <img class="previewImage"
                      src="http://vashalyalya.ru/uplfile/vashalyalya.ru/user/172101025072422.jpg" />
 
-                <h4>{{product.Price}} р.</h4>
+                <h4>{{product.Data.Price}} р.</h4>
             </div>
         </div>        
     </div>
