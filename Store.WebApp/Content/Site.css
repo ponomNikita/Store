@@ -1,12 +1,19 @@
-﻿body {
-    padding-top: 50px;
+﻿html { overflow-y: scroll; }
+body {
     padding-bottom: 20px;
+    background-image: url("images/background.png");
+    background-repeat: repeat;
+    background-size: 10%;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    width: 80%;
+}
+.underHeader {
+    
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -21,4 +28,73 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+/* Header area */
+
+.header {
+    background-image: url("images/headerBack.jpg");
+    background-size:auto 100%;          
+    height: 150px;
+    box-shadow: 2px 2px 2px #888888;
+}
+
+
+ .headerText {
+  font-size: 80px;
+  font-family: "Segoe UI";
+  color: rgb(227, 242, 57);
+  font-weight: bold;
+  font-style: italic;
+  line-height: 1.2;
+  z-index: 3;
+}
+
+
+.logo {
+    text-shadow:2px 1px 5px rgba(72,36,255,0.9);
+    font-weight:bold;
+    font-style:italic;
+    color:#E7ED32;
+    letter-spacing:3pt;
+    word-spacing:7pt;
+    font-size:42px;
+    text-align:left;
+    font-family:georgia, serif;
+    line-height:2;
+    margin:0px;
+    padding:0px;
+}
+
+/* Content area */
+
+.previewImage {
+    max-width: 150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    height: auto;
+}
+
+.previewProduct {
+    background: rgba(197, 204, 250, 0.5);
+}
+
+.previewProduct:hover {
+    background: #a1acf8;
+    background: rgba(161, 172, 248, 0.4);
+    cursor: pointer;
+}
+
+.previewProduct > a, h3, h4 {
+    text-align: center;
+}
+
+.previewProduct > h4, a {
+    color: brown;
+    padding: 5px;
+}
+
+.previewProduct > a:hover {
+    color: brown;
 }

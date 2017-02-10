@@ -1,0 +1,13 @@
+﻿
+<div class="container">
+    <div class="row">       
+        <div class="col-lg-3 col-md-4 col-sm-5 col-xs-7" ng-repeat="product in products" >  
+            <div class="previewProduct" ng-click="go(product.Data.Id)">
+                <h4>{{product.Data.Name}}</h4>
+                <img class="previewImage"
+                     src="{{product.Attachments[0].Path}}" />
+                <h4>{{product.Data.Price}} р.</h4>
+            </div>
+        </div>          
+    </div>
+</div>

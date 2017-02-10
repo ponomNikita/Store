@@ -3,5 +3,8 @@
     ViewBag.Title = "Products";
 }
 @Scripts.Render("~/bundles/angular")
-<h2>Products</h2>
+<script src="~/Scripts/angularModules/productApp.js"></script>
 
+<div ng-app="productsApp">
+    <div ng-view></div>
+</div>

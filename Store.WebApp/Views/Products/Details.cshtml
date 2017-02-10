@@ -1,0 +1,19 @@
+﻿@model Store.Domain.Models.Product
+<div class="container">
+    <h3>{{product.Data.Name}}</h3>
+    
+    <div class="row">
+        @Html.LabelFor(m => m.Description)
+        <label>{{product.Data.Description}}</label>
+    </div>
+
+    <div class="row">
+        @Html.LabelFor(m => m.Price)
+        <label>{{product.Data.Price}}</label>
+    </div>
+
+    <div class="row">
+        <a href="/Products#!/">Назад</a>
+    </div>
+
+    </div>
