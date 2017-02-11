@@ -3,24 +3,54 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Интернет магазин детских кроваток</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/menu")
 </head>
 <body>
-<div class="header">
-    <div class="container"  style="height: 100%">
-        <div class="row"  style="height: 100%">
-            <div class="col-lg-2 col-lg-offset-0
-                  col-md-1 col-md-offset-0
-                 col-sm-1 col-sm-offset-0
-                 col-xs-1 col-xs-offset-0" style="height: 100%;">
-                <img src="~/Content/images/logo.png"  style="height: 100%;"/>
+    <div class="header">
+        <div class="container" style="height: 100%">
+            <div class="row" style="height: 100%; position: relative;">
+                <div class="col-lg-6 col-lg-offset-0
+                  col-md-8 col-md-offset-0
+                 col-sm-10 col-sm-offset-0
+                 col-xs-12 col-xs-offset-0" style="height: 100%;">
+                    <img src="~/Content/images/logo.png" style="width: 100%;" />
+                </div>
+                
+                <div class="navigationBar col-lg-1 col-lg-offset-1
+                  col-md-1 col-md-offset-4
+                 col-sm-1 col-sm-offset-2
+                 col-xs-1 col-xs-offset-0" style="height: 100%; position: relative;">
+                    <a class="barButton barButtonActive">Главная</a>
+                </div>
+                
+                <div class="navigationBar col-lg-1 col-lg-offset-1
+                  col-md-1 col-md-offset-4
+                 col-sm-1 col-sm-offset-2
+                 col-xs-1 col-xs-offset-0" style="height: 100%; position: relative;">
+                    <a class="barButton">Доставка</a>
+                </div>
+                
+                <div class="navigationBar col-lg-1 col-lg-offset-1
+                  col-md-1 col-md-offset-4
+                 col-sm-1 col-sm-offset-2
+                 col-xs-1 col-xs-offset-0" style="height: 100%; position: relative;">
+                    <a class="barButton">О нас</a>
+                </div>
+                
+                <div class="navigationBar col-lg-1 col-lg-offset-1
+                  col-md-1 col-md-offset-4
+                 col-sm-1 col-sm-offset-2
+                 col-xs-1 col-xs-offset-0" style="height: 100%; position: relative;">
+                    <a class="barButton">Контакты</a>
+                </div>
+
             </div>
         </div>
     </div>
-</div>
-
 <div class="underHeader">
     <div class="container body-content">
         @RenderBody()
@@ -31,7 +61,6 @@
     </div>
 </div>
 
-@Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/bundles/bootstrap")
 @RenderSection("scripts", required: false)
 </body>

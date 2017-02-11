@@ -86,11 +86,11 @@ textarea {
 /* Content area */
 
 .previewImage {
-    max-width: 150px;
+    max-width: 300px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 90%;
+    width: 95%;
     height: auto;
 }
 
@@ -98,6 +98,7 @@ textarea {
     background: rgba(179, 207, 247, 0.6);
     border: 3px solid #afc2d0;
     margin: 5px;
+    min-width: 140px;
 }
 
 .previewProduct:hover {
@@ -118,3 +119,40 @@ textarea {
 .previewProduct > a:hover {
     color: brown;
 }
+
+
+/************Navigation bar************/
+
+.navigationBar {
+    margin: 2px;
+}
+
+.barButton {
+    background: #b698d6;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    min-height: 30px;
+    border: 2px solid #afc2d0;
+    -ms-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+}
+
+.navigationBar > a {
+    color: white;
+    text-decoration: none;
+}
+
+.barButton:hover {
+    background: #9a68d0;
+    cursor: pointer;
+}
+
+.barButtonActive {
+    background: #9a68d0;
+}
+
+
+/**************************************/
