@@ -5,6 +5,8 @@ body {
     background-image: url("images/background2.jpg");
     background-repeat: repeat;
     background-size: 10%;
+    color: #292f35;
+    font-family: 'a_FuturaRound', arial;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -30,43 +32,23 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/************Fonts*************/
+
+@font-face {
+    font-family: 'a_FuturaRound';
+    font-style: normal;
+    font-weight: 400;
+    src: local('a_FuturaRound'), local('a_FuturaRound-Regular'),
+        url('fonts/a_futuraround.woff') format('woff'),
+        url('fonts/a_futuraround.ttf') format('truetype');
+}
 /* Header area */
 
 .header {       
     height: 100px;
     margin: 20px;
 }
-
-.headerText {
-    color: #a7dd3c;
-    text-shadow: 0 0 2px #fff,
-             /* выпуклость надписи */
-                 -1px -1px 0 #6e981b,
-                 -2px -2px 1px #6e981b,
-             /* переход к подложке */
-                 -2px -2px 2px #282a22,
-             /* подложка */
-                 -2px -2px 7px #fcfce8,
-                 -3px -3px 7px #afaf9d,
-                 -4px -4px 7px #afaf9d,
-                 -5px -5px 7px #afaf9d,
-                 -6px -6px 7px #afaf9d,
-             /* тень подложки */                            
-                 -7px -7px 8px #70705c,
-                 -8px -8px 9px #989881;
-}
-
-
-/*.headerText {
-  font-size: 80px;
-  font-family: "Segoe UI";
-  color: rgb(227, 242, 57);
-  font-weight: bold;
-  font-style: italic;
-  line-height: 1.2;
-  z-index: 3;
-}*/
-
 
 .logo {
     text-shadow:2px 1px 5px rgba(72,36,255,0.9);
@@ -99,6 +81,8 @@ textarea {
     border: 3px solid #afc2d0;
     margin: 5px;
     min-width: 140px;
+    color: #4f6185;
+    height: 400px;
 }
 
 .previewProduct:hover {
@@ -109,11 +93,27 @@ textarea {
 
 .previewProduct > a, h3, h4 {
     text-align: center;
+    font-family: 'a_FuturaRound', arial;
+    font-size: 18px;
+}
+
+.previewProduct > h3, a {
+    color: #4f6185;
+    padding: 5px;
 }
 
 .previewProduct > h4, a {
-    color: white;
+    color: #c92557;
     padding: 5px;
+    position: absolute;
+    bottom: 0;
+}
+.previewProduct > p{
+    padding: 5px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .previewProduct > a:hover {
@@ -138,10 +138,11 @@ textarea {
     border: 2px solid #afc2d0;
     -ms-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
+    color: #e6f5fd;
+    font-weight: 900;
 }
 
 .navigationBar > a {
-    color: white;
     text-decoration: none;
 }
 
