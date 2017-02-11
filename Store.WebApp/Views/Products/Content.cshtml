@@ -5,7 +5,7 @@
             <div class="previewProduct" ng-click="go(product.Data.Id)">
                 <h4>{{product.Data.Name}}</h4>
                 <img class="previewImage"
-                     src="{{product.Attachments[0].Path}}" />
+                     ng-src="{{product.Attachments[0].Path}}" />
                 <h4>{{product.Data.Price}} р.</h4>
             </div>
         </div>          
