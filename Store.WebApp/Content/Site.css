@@ -46,8 +46,23 @@ textarea {
 /* Header area */
 
 .header {       
-    height: 100px;
+    min-height: 100px;
     margin: 20px;
+}
+
+.headerText > h1 {
+    font-family: 'a_FuturaRound', arial;
+    font-size: 24px;
+    color: #9a68d0;
+    text-shadow:  
+        1px 1px #b3cff7, 
+        -1px -1px 0 #b3cff7, 
+        1px -1px 0 #b3cff7,
+        -1px 1px 0 #b3cff7;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    margin-top: 0;
 }
 
 .logo {
@@ -124,22 +139,21 @@ textarea {
 /************Navigation bar************/
 
 .navigationBar {
-    margin: 2px;
 }
 
 .barButton {
     background: #b698d6;
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 100%;
     text-align: center;
+    display: inline-block;
+    width: 100%;
     min-height: 30px;
+    min-width: 90px;
     border: 2px solid #afc2d0;
     -ms-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
     color: #e6f5fd;
     font-weight: 900;
+    letter-spacing: 2px;
 }
 
 .navigationBar > a {
@@ -153,6 +167,10 @@ textarea {
 
 .barButtonActive {
     background: #9a68d0;
+}
+
+.tabMenu {
+    margin: 20px;
 }
 
 
