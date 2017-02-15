@@ -29,7 +29,8 @@ namespace Store
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                       "~/Scripts/angular/angular.min.js",
-                      "~/Scripts/angular/angular-route.min.js"));
+                      "~/Scripts/angular/angular-route.min.js",
+                      "~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"));
 
             
                 bundles.Add(new ScriptBundle("~/bundles/menu").Include(

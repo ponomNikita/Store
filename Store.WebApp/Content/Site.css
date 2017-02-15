@@ -134,12 +134,34 @@ textarea {
 .previewProduct > a:hover {
     color: brown;
 }
+/*********Product Details**************/
+
+.productDetails-slides {
+    display: inline-block;
+}
+
+.productDetails-image {
+  width: auto;
+  max-width: 100%;
+  height: 300px;
+  max-height: 300px;
+}
+
+@media(max-width:768px) {
+      .productDetails-image {
+      width: auto;
+      max-width: 100%;
+      height: 200px;
+      max-height: 200px;
+    }  
+}
+
+.productDetails-info {
+    display: inline-block;   
+}
 
 
 /************Navigation bar************/
-
-.navigationBar {
-}
 
 .barButton {
     background: #b698d6;
@@ -173,5 +195,13 @@ textarea {
     margin: 20px;
 }
 
+/*******************Buttons*************/
+.btn-default {
+    margin-top: 25px;
+    margin-left: 10px;
+}
+.btn-default > a {
+    text-decoration: none;
+}
 
 /**************************************/

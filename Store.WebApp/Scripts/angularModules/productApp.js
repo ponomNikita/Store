@@ -1,7 +1,7 @@
 ﻿var products = {};
 
 
-var productsApp = angular.module('productsApp', ['ngRoute']);
+var productsApp = angular.module('productsApp', ['ngRoute', 'ui.bootstrap']);
 
 
 productsApp.factory("productsFactory",
@@ -42,7 +42,23 @@ productsApp.controller('productsController',
 
 productsApp.controller('productDetailController',
     function ($scope, $routeParams, productsFactory) {
-        $scope.product = productsFactory.find($routeParams.id);
+        var product = $scope.product = productsFactory.find($routeParams.id);
+
+        $scope.noWrapSlides = false;
+        $scope.active = 0;
+        var slides = $scope.slides = [];
+        var currIndex = 0;
+
+        $scope.addSlide = function (index) {
+             slides.push({
+                image: product.Attachments[index].Path,
+                id: currIndex++
+            });
+        };
+
+        for (var i = 0; i < product.Attachments.length; i++) {
+            $scope.addSlide(i);
+        }
     });
 
 productsApp.config(['$locationProvider', '$routeProvider',
