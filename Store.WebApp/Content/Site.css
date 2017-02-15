@@ -15,9 +15,6 @@ body {
     padding-right: 15px;
     width: 80%;
 }
-.underHeader {
-    
-}
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -164,13 +161,13 @@ textarea {
 /************Navigation bar************/
 
 .barButton {
-    background: #b698d6;
+    background: #8cb3ea;
     text-align: center;
     display: inline-block;
     width: 100%;
     min-height: 30px;
     min-width: 90px;
-    border: 2px solid #afc2d0;
+    border: 1px solid #5591e6;
     -ms-border-radius: 10px 10px 10px 10px;
     border-radius: 10px 10px 10px 10px;
     color: #e6f5fd;
@@ -183,12 +180,12 @@ textarea {
 }
 
 .barButton:hover {
-    background: #9a68d0;
+    background: #5591e6;
     cursor: pointer;
 }
 
 .barButtonActive {
-    background: #9a68d0;
+    background: #5591e6;
 }
 
 .tabMenu {
