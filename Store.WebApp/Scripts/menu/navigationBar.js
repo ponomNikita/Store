@@ -1,9 +1,9 @@
 ﻿
 $(document).ready(function () {
 
-    $(".barButton").on("click", function (e) {
-        $(".barButtonActive").removeClass('barButtonActive');
-        $(e.target).addClass('barButtonActive');
+    $(".cssmenu").children("ul").children('li').on("click", function (e) {
+        $(".active").removeClass('active');
+        $(e.target).parent().addClass('active');
     });
 
 });
