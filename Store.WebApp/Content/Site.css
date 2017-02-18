@@ -1,8 +1,6 @@
 ﻿html { overflow-y: scroll; }
 body {
     padding-bottom: 20px;
-    /*background-color: #cfe0e8;*/
-
     color: #4f6185;
     font-family: 'a_FuturaRound', arial;
 }
@@ -11,8 +9,10 @@ body {
     background-image: url("images/background2.jpg");
     background-repeat: repeat;
     background-size: 10%;
+    box-shadow: 0 0 10px #000000;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     min-width: 430px;
+    position: relative;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -170,7 +170,7 @@ textarea {
 
 /************Navigation bar************/
 
-.barButton {
+/*.barButton {
     background: #8cb3ea;
     text-align: center;
     display: inline-block;
@@ -200,7 +200,7 @@ textarea {
 
 .tabMenu {
     margin: 20px;
-}
+}*/
 
 /*******************Buttons*************/
 .btn-default {
@@ -211,7 +211,7 @@ textarea {
     text-decoration: none;
 }
 
-/**************************************/
+/************Navigation bar************/
 .cssmenu,
 .cssmenu ul,
 .cssmenu ul li,
@@ -244,8 +244,10 @@ textarea {
 
 }
 .cssmenu ul {
-  background: rgba(175, 194, 208, 0.8);
+    background: #afc2d0;
+    background: rgba(175, 194, 208, 0.8);
 }
+
 .cssmenu > ul > li {
   float: left;
 }
@@ -310,3 +312,24 @@ textarea {
 .cssmenu > ul > li > a:hover:after {
   background: #4f6185;
 }
+
+/**************Login*********************/
+
+.loginButtons {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.btn-info {
+    background: #4f6185;
+    letter-spacing: 1px;
+    border: none;
+}
+
+.btn-info:hover, .btn-info:active, .btn-info:focus {
+    background: #6278a3;
+    border: none;
+}
+
+

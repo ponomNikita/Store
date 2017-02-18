@@ -241,8 +241,9 @@
     <Content Include="Views\Products\Index.cshtml" />
     <Content Include="Views\Products\Content.cshtml" />
     <Content Include="Views\Products\Details.cshtml" />
-    <Content Include="Views\Shared\_MenuBar.cshtml" />
-    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_MenuBarPartial.cshtml" />
+    <Content Include="Views\Shared\_HeaderPartial.cshtml" />
+    <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
