@@ -25,12 +25,14 @@ namespace Store
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/site.css",
+                      "~/Content/angular-block-ui.min.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/angular").Include(
                       "~/Scripts/angular/angular.min.js",
                       "~/Scripts/angular/angular-route.min.js",
-                      "~/Scripts/angular-ui/ui-bootstrap-tpls.min.js"));
+                      "~/Scripts/angular-ui/ui-bootstrap-tpls.min.js",
+                      "~/Scripts/angular-block-ui/angular-block-ui.min.js"));
 
             
                 bundles.Add(new ScriptBundle("~/bundles/menu").Include(

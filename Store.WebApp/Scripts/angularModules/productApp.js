@@ -1,7 +1,7 @@
 ﻿var products = {};
 
 
-var productsApp = angular.module('productsApp', ['ngRoute', 'ui.bootstrap']);
+var productsApp = angular.module('productsApp', ['ngRoute', 'ui.bootstrap', 'blockUI']);
 
 
 productsApp.factory("productsFactory",
@@ -23,12 +23,16 @@ productsApp.factory("productsFactory",
 
 
 productsApp.controller('productsController',
-    function ($scope, productsFactory, $location) {
+    function ($scope, productsFactory, $location, blockUI) {
 
         if (typeof products[0] === 'undefined') {
+            blockUI.start("Загрузка...");
+
             productsFactory.getProducts(function (response) {
                 products = response.data;
                 $scope.products = response.data;
+
+                blockUI.stop();
             });
         } else {
             $scope.products = products;
@@ -76,6 +80,10 @@ productsApp.controller('accountController', function ($scope, $uibModal, $log, $
             controller: 'accountController',
             size: size,
             appendTo: parentElem
+        });
+
+        modalInstance.opened.then(function () {
+            
         });
 
         modalInstance.result.then(function () {

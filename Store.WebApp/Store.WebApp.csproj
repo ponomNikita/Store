@@ -181,6 +181,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Data\SqlScripts\InsertProducts.sql" />
+    <Content Include="Content\angular-block-ui.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\images\background.png" />
@@ -195,6 +196,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\angular-block-ui\angular-block-ui.min.js" />
     <Content Include="Scripts\angular-ui\ui-bootstrap-tpls-2.5.0.min.js" />
     <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.js" />
     <Content Include="Scripts\angular-ui\ui-bootstrap-tpls.min.js" />
@@ -212,6 +214,7 @@
     <Content Include="Scripts\angular\angular.min.js.map" />
     <Content Include="Content\fonts\a_futuraround.ttf" />
     <Content Include="Content\fonts\a_futuraround.woff" />
+    <Content Include="Scripts\angular-block-ui\angular-block-ui.min.js.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
