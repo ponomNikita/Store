@@ -61,6 +61,32 @@ productsApp.controller('productDetailController',
         }
     });
 
+productsApp.controller('accountController', function ($scope, $uibModal, $log, $document) {
+
+    $scope.animationsEnabled = true;
+
+    $scope.open = function (size, parentSelector) {
+        var parentElem = parentSelector ?
+          angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
+        var modalInstance = $uibModal.open({
+            animation: $scope.animationsEnabled,
+            ariaLabelledBy: 'modal-title',
+            ariaDescribedBy: 'modal-body',
+            templateUrl: 'Account/Login',
+            controller: 'accountController',
+            size: size,
+            appendTo: parentElem
+        });
+
+        modalInstance.result.then(function () {
+        }, function () {
+            $log.info('Modal dismissed at: ' + new Date());
+        });
+    };
+
+    
+});
+
 productsApp.config(['$locationProvider', '$routeProvider',
     function config($locationProvider, $routeProvider) {
         //$locationProvider.html5Mode(true);

@@ -8,8 +8,12 @@
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/menu")
+    @Scripts.Render("~/bundles/angular")
+    <script src="~/Scripts/angularModules/productApp.js"></script>
+
+
 </head>
-<body>
+<body ng-app="productsApp">
 <div class="body-content-main container">
     @Html.Partial("_LoginPartial")
     @Html.Partial("_HeaderPartial")

@@ -1,4 +1,4 @@
-﻿html { overflow-y: scroll; }
+﻿/*html { overflow-y: scroll; }*/
 body {
     padding-bottom: 20px;
     color: #4f6185;
@@ -38,6 +38,13 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+@media(max-width:768px) {
+    .modal-sm {
+        width: 200px;
+        margin-left: 0;
+    }
 }
 
 /************Fonts*************/

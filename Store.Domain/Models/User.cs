@@ -22,9 +22,11 @@ namespace Store.Domain.Models
         public string Surname { get; set; }
 
         [Required]
+        [Display(Name = "Почта")]
         public string Email { get; set; }
 
         [Required]
+        [Display(Name = "Пароль")]
         public string Password { get; set; }
 
         public string PhoneNumber { get; set; }
