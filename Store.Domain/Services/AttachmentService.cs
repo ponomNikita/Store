@@ -10,7 +10,7 @@ namespace Store.Domain.Services
 {
     public class AttachmentService : BaseEntityService<Attachment>, IAttachmentService
     {
-        public AttachmentService(IRepository<Attachment> repository) : base(repository)
+        public AttachmentService(IRepository<Attachment> repository, ILogger logger) : base(repository, logger)
         {
         }
     }

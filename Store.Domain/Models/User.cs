@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Store.Domain.Enums;
+using System.ComponentModel.DataAnnotations;
 
 namespace Store.Domain.Models
 {
@@ -20,8 +21,10 @@ namespace Store.Domain.Models
 
         public string Surname { get; set; }
 
+        [Required]
         public string Email { get; set; }
 
+        [Required]
         public string Password { get; set; }
 
         public string PhoneNumber { get; set; }

@@ -10,6 +10,7 @@ namespace Store.Infrastructure.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(Store.Infrastructure.DataAccessLayer.DataBaseContext context)

@@ -8,11 +8,10 @@ using Store.Domain.Models;
 
 namespace Store.Domain.Services
 {
-    public class ProductService : BaseEntityService<Product>, IProductService
+    public class AccountService : BaseEntityService<User>, IAccountService
     {
-        public ProductService(IRepository<Product> repository, ILogger logger) : base(repository, logger)
+        public AccountService(IRepository<User> repository, ILogger logger) : base(repository, logger)
         {
         }
-
     }
 }

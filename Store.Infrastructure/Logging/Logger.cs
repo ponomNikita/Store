@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using log4net;
+using Store.Domain.Contracts;
 
 namespace Store.Infrastructure.Logging
 {
-    class Logger : ILogger
+    public class Logger : ILogger
     {
         private static ILog _logger;
 
@@ -36,6 +37,30 @@ namespace Store.Infrastructure.Logging
             if (_logger.IsDebugEnabled)
             {
                 _logger.Debug(log);
+            }
+        }
+
+        public void InfoFormat(string log, params object[] args)
+        {
+            if (_logger.IsInfoEnabled)
+            {
+                _logger.InfoFormat(log, args);
+            }
+        }
+
+        public void DebugFormat(string log, params object[] args)
+        {
+            if (_logger.IsDebugEnabled)
+            {
+                _logger.DebugFormat(log, args);
+            }
+        }
+
+        public void ErrorFormat(string log, params object[] args)
+        {
+            if (_logger.IsErrorEnabled)
+            {
+                _logger.ErrorFormat(log, args);
             }
         }
     }

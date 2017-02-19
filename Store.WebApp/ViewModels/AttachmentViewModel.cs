@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using Store.Domain.Contracts;
 using Store.Domain.Models;
 using Store.Infrastructure.Logging;
 

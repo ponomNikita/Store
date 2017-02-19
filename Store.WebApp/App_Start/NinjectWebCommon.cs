@@ -1,6 +1,7 @@
 using Store.Domain.Services;
 using Store.Domain.Contracts;
 using Store.Infrastructure.DataAccessLayer;
+using Store.Infrastructure.Logging;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Store.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(Store.App_Start.NinjectWebCommon), "Stop")]
@@ -67,7 +68,10 @@ namespace Store.App_Start
         {
             kernel.Bind<IProductService>().To<ProductService>();
             kernel.Bind<IAttachmentService>().To<AttachmentService>();
+            kernel.Bind<IAccountService>().To<AccountService>();
             kernel.Bind(typeof(IRepository<>)).To(typeof(Repository<>));
+            kernel.Bind<ILogger>().To<Logger>()
+            .WithConstructorArgument(typeof(Type), x => x.Request.ParentContext.Plan.Type);
         }        
     }
 }
