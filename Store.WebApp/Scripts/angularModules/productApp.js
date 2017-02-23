@@ -25,14 +25,16 @@ productsApp.factory("productsFactory",
 productsApp.controller('productsController',
     function ($scope, productsFactory, $location, blockUI) {
 
+        var blockProducts = blockUI.instances.get('productBlock');
+
         if (typeof products[0] === 'undefined') {
-            blockUI.start("Загрузка...");
+            blockProducts.start();
 
             productsFactory.getProducts(function (response) {
                 products = response.data;
                 $scope.products = response.data;
 
-                blockUI.stop();
+                blockProducts.stop();
             });
         } else {
             $scope.products = products;
@@ -96,10 +98,9 @@ productsApp.controller('accountController', function ($scope, $uibModal, $log, $
 });
 
 productsApp.config(['$locationProvider', '$routeProvider',
-    function config($locationProvider, $routeProvider) {
+    function config($locationProvider, $routeProvider, blockUIConfig) {
         //$locationProvider.html5Mode(true);
         $locationProvider.hashPrefix('!');
-
         $routeProvider
             .when('/',
             {
@@ -113,3 +114,11 @@ productsApp.config(['$locationProvider', '$routeProvider',
                 });
     }
 ]);
+
+/**
+ * angular block ui config
+ */
+productsApp.config(function (blockUIConfig) {
+    blockUIConfig.message = 'Загрузка...';
+
+});
