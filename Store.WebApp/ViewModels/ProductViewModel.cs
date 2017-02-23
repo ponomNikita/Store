@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using Store.Domain.Contracts;
 using Store.Domain.Models;
-using Store.Domain.Specifications.Attachment;
+using Store.Domain.Specifications;
 
 namespace Store.ViewModels
 {

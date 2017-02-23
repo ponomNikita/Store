@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Store.Domain.Contracts;
 using Store.Domain.Models;
 
-namespace Store.Domain.Specifications.Attachment
+namespace Store.Domain.Specifications
 {
     public class GetAttachmentByEntityAndFeatureIdSpecification : ISpecification<Models.Attachment>
     {

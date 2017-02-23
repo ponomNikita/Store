@@ -33,6 +33,7 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,6 +61,7 @@
     <Compile Include="Services\AttachmentService.cs" />
     <Compile Include="Services\BaseEntityService.cs" />
     <Compile Include="Services\ProductService.cs" />
+    <Compile Include="Specifications\Account\GetUserByEmailAndPasswordSpecification.cs" />
     <Compile Include="Specifications\Attachment\GetAttachmentByEntityAndFeatureIdSpecification.cs" />
     <Compile Include="Specifications\Shared\GetAllSpecification.cs" />
     <Compile Include="Specifications\Shared\GetByIdSpecification.cs" />

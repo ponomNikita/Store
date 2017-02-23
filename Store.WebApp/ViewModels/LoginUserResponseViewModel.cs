@@ -18,7 +18,7 @@ namespace Store.ViewModels
             else
             {
                 Status = EResponseStatus.Success;
-                UserName = !string.IsNullOrWhiteSpace(user.Name) ? user.Name : user.Email;
+                UserName = user.Email;
             }
         }
 

@@ -5,14 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using Store.Domain.Contracts;
 using Store.Domain.Models;
-using Store.Domain.Specifications.Shared;
+using Store.Domain.Specifications;
 
 namespace Store.Domain.Services
 {
     public class BaseEntityService<T> where T : TEntity
     {
-        private readonly IRepository<T> _repository;
-        private readonly ILogger _logger;
+        protected readonly IRepository<T> _repository;
+        protected readonly ILogger _logger;
 
         protected BaseEntityService(IRepository<T> repository, ILogger logger)
         {

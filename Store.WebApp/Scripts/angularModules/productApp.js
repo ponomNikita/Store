@@ -1,9 +1,8 @@
 ﻿var products = {};
 var loginModal;
-var isAuthorize = false;
 
 var loginModel = {
-    isAuthorize: false,
+    isAuthorize: null,
     userName: ""
 }
 
@@ -23,6 +22,19 @@ productsApp.factory("productsFactory",
                 });
 
                 return result;
+            }
+        };
+    });
+
+productsApp.factory("accountFactory",
+    function ($http) {
+        return {
+            SetupLoginModel: function () {
+                $http.get("Account/IsAuthorized")
+                    .then(function (response) {
+                        loginModel.isAuthorize = response.data.IsAuthorized;
+                        loginModel.userName = response.data.UserName;
+                    });
             }
         };
     });
@@ -73,7 +85,9 @@ productsApp.controller('productDetailController',
         }
     });
 
-productsApp.controller('accountController', function ($scope, $uibModal, $log, $document, $http) {
+productsApp.controller('accountController', function ($scope, $uibModal, $log, $document, $http, accountFactory) {
+
+    accountFactory.SetupLoginModel();
 
     $scope.animationsEnabled = true;
 
@@ -100,18 +114,27 @@ productsApp.controller('accountController', function ($scope, $uibModal, $log, $
         });
     };
 
-    $scope.sendForm = function () {
+    $scope.Login = function () {
         $http.post('/Account/Login', $scope.model)
             .then(function (data, status, headers, config) {
                     if (data.data.Status !== 0) {
-                        $("#AuthorizationMessages").append("<span>Неверный адрес электронной почты или пароль</span>");
+                        $("#AuthorizationMessages").html("<span>Неверный адрес электронной почты или пароль</span>");
                     } else {
                         loginModel.userName = data.data.UserName;
                         loginModel.isAuthorize = true;
                         loginModal.close();
-                        console.log($scope.loginModel.userName);
                     }
                 })
+            .catch(function (data, status, header, config) {
+                alert(data);
+            });
+    };
+
+    $scope.Logout = function () {
+        $http.get('/Account/Logout')
+            .then(function (data, status, headers, config) {
+                accountFactory.SetupLoginModel();
+            })
             .catch(function (data, status, header, config) {
                 alert(data);
             });

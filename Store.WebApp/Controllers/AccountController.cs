@@ -27,12 +27,31 @@ namespace Store.Controllers
         [HttpPost]
         public JsonResult Login(LoginUserViewModel model)
         {
-            _logger.InfoFormat("Calling Login(Email={0}, Password={1})", model.Email, model.Password);
-
             var currentUser = _service.Login(model.Email, model.Password);
             LoginUserResponseViewModel response = new LoginUserResponseViewModel(currentUser);
 
             return Json(response);
+        }
+
+        [HttpGet]
+        public JsonResult IsAuthorized()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                return Json(new {IsAuthorized = true, UserName = User.Identity.Name}, JsonRequestBehavior.AllowGet);
+            }
+            else
+            {
+                return Json(new { IsAuthorized = false }, JsonRequestBehavior.AllowGet);
+            }
+        }
+
+        [HttpGet]
+        public ActionResult Logout()
+        {
+            _service.Logout();
+
+            return new EmptyResult();
         }
     }
 }

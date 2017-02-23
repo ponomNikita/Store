@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Store.Domain.Contracts;
 using Store.Domain.Models;
 
-namespace Store.Domain.Specifications.Shared
+namespace Store.Domain.Specifications
 {
     public class GetAllSpecification<T> : ISpecification<T>
         where T : TEntity
