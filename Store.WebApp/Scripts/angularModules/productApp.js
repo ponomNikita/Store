@@ -1,7 +1,13 @@
 ﻿var products = {};
+var loginModal;
+var isAuthorize = false;
 
+var loginModel = {
+    isAuthorize: false,
+    userName: ""
+}
 
-var productsApp = angular.module('productsApp', ['ngRoute', 'ui.bootstrap', 'blockUI']);
+var productsApp = angular.module('productsApp', ['ngRoute', 'ui.bootstrap', 'blockUI', 'ngSanitize']);
 
 
 productsApp.factory("productsFactory",
@@ -67,14 +73,14 @@ productsApp.controller('productDetailController',
         }
     });
 
-productsApp.controller('accountController', function ($scope, $uibModal, $log, $document) {
+productsApp.controller('accountController', function ($scope, $uibModal, $log, $document, $http) {
 
     $scope.animationsEnabled = true;
 
     $scope.open = function (size, parentSelector) {
         var parentElem = parentSelector ?
           angular.element($document[0].querySelector('.modal-demo ' + parentSelector)) : undefined;
-        var modalInstance = $uibModal.open({
+        loginModal = $uibModal.open({
             animation: $scope.animationsEnabled,
             ariaLabelledBy: 'modal-title',
             ariaDescribedBy: 'modal-body',
@@ -84,21 +90,39 @@ productsApp.controller('accountController', function ($scope, $uibModal, $log, $
             appendTo: parentElem
         });
 
-        modalInstance.opened.then(function () {
+        loginModal.opened.then(function () {
             
         });
 
-        modalInstance.result.then(function () {
+        loginModal.result.then(function () {
         }, function () {
             $log.info('Modal dismissed at: ' + new Date());
         });
     };
 
-    
+    $scope.sendForm = function () {
+        $http.post('/Account/Login', $scope.model)
+            .then(function (data, status, headers, config) {
+                    if (data.data.Status !== 0) {
+                        $("#AuthorizationMessages").append("<span>Неверный адрес электронной почты или пароль</span>");
+                    } else {
+                        loginModel.userName = data.data.UserName;
+                        loginModel.isAuthorize = true;
+                        loginModal.close();
+                        console.log($scope.loginModel.userName);
+                    }
+                })
+            .catch(function (data, status, header, config) {
+                alert(data);
+            });
+    };
+
+    $scope.loginModel = loginModel;
+
 });
 
 productsApp.config(['$locationProvider', '$routeProvider',
-    function config($locationProvider, $routeProvider, blockUIConfig) {
+    function config($locationProvider, $routeProvider) {
         //$locationProvider.html5Mode(true);
         $locationProvider.hashPrefix('!');
         $routeProvider
@@ -122,3 +146,4 @@ productsApp.config(function (blockUIConfig) {
     blockUIConfig.message = 'Загрузка...';
 
 });
+

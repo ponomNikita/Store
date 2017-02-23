@@ -13,5 +13,10 @@ namespace Store.Domain.Services
         public AccountService(IRepository<User> repository, ILogger logger) : base(repository, logger)
         {
         }
+
+        public User Login(string login, string password)
+        {
+            return new User {Email = "qwert"};
+        }
     }
 }

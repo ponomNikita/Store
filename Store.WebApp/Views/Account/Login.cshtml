@@ -4,26 +4,38 @@
 }
 <h4>Вход</h4>
 <div class="container">
-    <div class="row">
-        <div class="form-group 
-             col-lg-8 col-lg-offset-2
-             col-md-8 col-md-offset-2
-             col-sm-8 col-sm-offset-2
-             col-xs-12">
-            @Html.LabelFor(m => m.Email, new { @class = "control-label" })
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+    <form name="loginForm" ng-submit="sendForm()" ng-controller="accountController">
+        <div class="row">
+            <div class="form-group
+                    col-lg-8 col-lg-offset-2
+                    col-md-8 col-md-offset-2
+                    col-sm-8 col-sm-offset-2
+                    col-xs-12">
+                @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+                <input class="form-control" ng-model="model.Email" type="email" required/>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="form-group 
-             col-lg-8 col-lg-offset-2
-             col-md-8 col-md-offset-2
-             col-sm-8 col-sm-offset-2
-             col-xs-12">
-            @Html.LabelFor(m => m.Password, new { @class = "control-label" })
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+        <div class="row">
+            <div class="form-group
+                    col-lg-8 col-lg-offset-2
+                    col-md-8 col-md-offset-2
+                    col-sm-8 col-sm-offset-2
+                    col-xs-12">
+                @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+                <input class="form-control" ng-model="model.Password" type="password" required/>
+            </div>
         </div>
-    </div>
+        <div class="row">
+            <button class="btn btn-info
+                    col-lg-2 col-lg-offset-5
+                    col-md-2 col-md-offset-5
+                    col-sm-2 col-sm-offset-5
+                    col-xs-2" type="submit" ng-disabled="loginForm.$invalid">
+                Войти
+            </button>
+        </div>
+        <div id="AuthorizationMessages"></div>
+    </form>
 </div>
 
 
