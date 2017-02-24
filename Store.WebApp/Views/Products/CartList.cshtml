@@ -1,0 +1,21 @@
+﻿<div ng-controller="productsCartController">
+    <div class="container">
+        <div class="row">
+            <div class="cartList" ng-repeat="product in productsCart.products track by $index">
+                <a ng-href="/Products#!/details:{{product.Data.Id}}">
+                    <img ng-src="{{product.Attachments[0].Path}}" />
+                    {{product.Data.Name}}
+                    {{product.Data.Price}} р.
+                </a>
+            </div>
+        </div>
+
+        <div class="row">
+            <span><b>Итого: {{productsCart.sum}} р.</b></span>
+        </div>
+        <div class="row">
+            <button class="btn btn-default">Оформить заказ</button>
+        </div>
+    </div>
+</div>
+ 

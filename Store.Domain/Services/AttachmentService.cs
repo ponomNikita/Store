@@ -8,18 +8,10 @@ using Store.Domain.Models;
 
 namespace Store.Domain.Services
 {
-    public class AttachmentService : IAttachmentService
+    public class AttachmentService : BaseEntityService<Attachment>, IAttachmentService
     {
-        private readonly IRepository<Attachment> _attachmentRepository;
-
-        public AttachmentService(IRepository<Attachment> attachmentRepository)
+        public AttachmentService(IRepository<Attachment> repository, ILogger logger) : base(repository, logger)
         {
-            _attachmentRepository = attachmentRepository;
-        }
-
-        public List<Attachment> GetBySpecification(ISpecification<Attachment> specification)
-        {
-            return _attachmentRepository.GetBySpecification(specification).ToList();
         }
     }
 }

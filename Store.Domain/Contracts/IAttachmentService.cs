@@ -7,8 +7,7 @@ using Store.Domain.Models;
 
 namespace Store.Domain.Contracts
 {
-    public interface IAttachmentService
+    public interface IAttachmentService : IService<Attachment>
     {
-        List<Attachment> GetBySpecification(ISpecification<Attachment> specification);
     }
 }

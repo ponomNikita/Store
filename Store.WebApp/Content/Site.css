@@ -1,19 +1,29 @@
-﻿html { overflow-y: scroll; }
+﻿/*html { overflow-y: scroll; }*/
 body {
     padding-bottom: 20px;
-    background-image: url("images/background.png");
+    color: #4f6185;
+    font-family: 'a_FuturaRound', arial;
+}
+
+.body-content-main {
+    background-image: url("images/background2.jpg");
     background-repeat: repeat;
     background-size: 10%;
+    box-shadow: 0 0 10px #000000;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    min-width: 450px;
+    position: relative;
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
     width: 80%;
+    padding-top: 15px;
 }
-.underHeader {
-    
+
+.container {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -29,26 +39,45 @@ select,
 textarea {
     max-width: 280px;
 }
+
+@media(max-width:768px) {
+    .modal-sm {
+        width: 200px;
+        margin-left: 0;
+    }
+}
+
+/************Fonts*************/
+
+@font-face {
+    font-family: 'a_FuturaRound';
+    font-style: normal;
+    font-weight: 400;
+    src: local('a_FuturaRound'), local('a_FuturaRound-Regular'),
+        url('fonts/a_futuraround.woff') format('woff'),
+        url('fonts/a_futuraround.ttf') format('truetype');
+}
 /* Header area */
 
-.header {
-    background-image: url("images/headerBack.jpg");
-    background-size:auto 100%;          
-    height: 150px;
-    box-shadow: 2px 2px 2px #888888;
+.header {       
+    min-height: 100px;
+    margin: 20px;
 }
 
-
- .headerText {
-  font-size: 80px;
-  font-family: "Segoe UI";
-  color: rgb(227, 242, 57);
-  font-weight: bold;
-  font-style: italic;
-  line-height: 1.2;
-  z-index: 3;
+.headerText > h1 {
+    font-family: 'a_FuturaRound', arial;
+    font-size: 24px;
+    color: #9a68d0;
+    text-shadow:  
+        1px 1px #b3cff7, 
+        -1px -1px 0 #b3cff7, 
+        1px -1px 0 #b3cff7,
+        -1px 1px 0 #b3cff7;
+    font-weight: 900;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    margin-top: 0;
 }
-
 
 .logo {
     text-shadow:2px 1px 5px rgba(72,36,255,0.9);
@@ -68,33 +97,229 @@ textarea {
 /* Content area */
 
 .previewImage {
-    max-width: 150px;
+    max-width: 300px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 90%;
+    width: 95%;
     height: auto;
 }
 
 .previewProduct {
-    background: rgba(197, 204, 250, 0.5);
+    background: rgba(179, 207, 247, 0.6);
+    border: 3px solid #afc2d0;
+    margin: 5px;
+    min-width: 140px;
+    color: #4f6185;
+    height: 400px;
 }
 
 .previewProduct:hover {
-    background: #a1acf8;
-    background: rgba(161, 172, 248, 0.4);
+    background: rgba(179, 207, 247, 1);
     cursor: pointer;
+    margin: 5px;
 }
 
 .previewProduct > a, h3, h4 {
     text-align: center;
+    font-family: 'a_FuturaRound', arial;
+    font-size: 18px;
 }
 
-.previewProduct > h4, a {
-    color: brown;
+.previewProduct > h3, .previewProduct > a {
+    color: #4f6185;
     padding: 5px;
+}
+
+.previewProduct > h4 {
+    color: #c92557;
+    padding: 5px;
+    position: absolute;
+    bottom: 0;
+}
+.previewProduct > p{
+    padding: 5px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .previewProduct > a:hover {
     color: brown;
 }
+/*********Product Details**************/
+
+.productDetails-slides {
+    display: inline-block;
+}
+
+.productDetails-image {
+  width: auto;
+  max-width: 100%;
+  height: 300px;
+  max-height: 300px;
+}
+
+@media(max-width:768px) {
+      .productDetails-image {
+      width: auto;
+      max-width: 100%;
+      height: 200px;
+      max-height: 200px;
+    }  
+}
+
+.productDetails-info {
+    display: inline-block;   
+}
+
+/*******************Buttons*************/
+.btn-default {
+    margin-top: 25px;
+    margin-right: 10px;
+}
+.btn-default > a {
+    text-decoration: none;
+}
+
+/************Navigation bar************/
+.cssmenu,
+.cssmenu ul,
+.cssmenu ul li,
+.cssmenu ul li a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.cssmenu:after,
+.cssmenu > ul:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.cssmenu {
+  width: auto;
+  border-bottom: 3px solid #4f6185;
+  font-family: Raleway, sans-serif;
+  line-height: 1;
+
+}
+.cssmenu ul {
+    background: #afc2d0;
+    background: rgba(175, 194, 208, 0.8);
+}
+
+.cssmenu > ul > li {
+  float: left;
+}
+.cssmenu.align-center > ul {
+  font-size: 0;
+  text-align: center;
+}
+.cssmenu.align-center > ul > li {
+  display: inline-block;
+  float: none;
+}
+.cssmenu.align-right > ul > li {
+  float: right;
+}
+.cssmenu.align-right > ul > li > a {
+  margin-right: 0;
+  margin-left: -4px;
+}
+
+.cssmenu > ul > li.rightalign {
+    float:right;
+    right: 5px;
+    font-size: 30px;
+}
+
+.rightalign:hover {
+    color: #9a68d0;
+    cursor: pointer;
+}
+    
+.cssmenu > ul > li > a {
+  z-index: 2;
+  padding: 18px 25px 12px 25px;
+  font-size: 15px;
+  font-weight: 400;
+  text-decoration: none;
+  color: #444444;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -ms-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  margin-right: -4px;
+}
+.cssmenu > ul > li.active > a,
+.cssmenu > ul > li:hover > a,
+.cssmenu > ul > li > a:hover {
+  color: #ffffff;
+}
+.cssmenu > ul > li > a:after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: -1;
+  width: 100%;
+  height: 120%;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  content: "";
+  -webkit-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  transition: all .2s ease;
+  -webkit-transform: perspective(5px) rotateX(2deg);
+  -webkit-transform-origin: bottom;
+  -moz-transform: perspective(5px) rotateX(2deg);
+  -moz-transform-origin: bottom;
+  transform: perspective(5px) rotateX(2deg);
+  transform-origin: bottom;
+}
+.cssmenu > ul > li.active > a:after,
+.cssmenu > ul > li:hover > a:after,
+.cssmenu > ul > li > a:hover:after {
+  background: #4f6185;
+}
+
+/**************Login*********************/
+
+.loginButtons {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.btn-info {
+    background: #4f6185;
+    letter-spacing: 1px;
+    border: none;
+}
+
+.btn-info:hover, .btn-info:active, .btn-info:focus {
+    background: #6278a3;
+    border: none;
+}
+
+/****************** cartList *****************/
+
+.cartList img {
+    max-width: 50px;
+    height: auto;
+}
+
+

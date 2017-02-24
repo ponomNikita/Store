@@ -10,5 +10,6 @@ namespace Store.Domain.Enums
     {
         Product = 1,
         Attachment = 2,
+        User = 3,
     }
 }

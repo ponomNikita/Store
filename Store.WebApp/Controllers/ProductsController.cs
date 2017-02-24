@@ -59,5 +59,13 @@ namespace Store.Controllers
             return PartialView();
         }
 
+        [HttpGet]
+        public ActionResult CartList()
+        {
+            _logger.Info("CartList()");
+
+            return PartialView();
+        }
+
     }
 }

@@ -1,19 +1,40 @@
 ﻿@model Store.Domain.Models.Product
-<div class="container">
-    <h3>{{product.Data.Name}}</h3>
     
+<div class="container">
     <div class="row">
-        @Html.LabelFor(m => m.Description)
-        <label>{{product.Data.Description}}</label>
-    </div>
+        <div class="productDetails-slides 
+             col-lg-6 col-lg-offset-0
+             col-md-10 col-md-offset-1
+             col-sm-12 col-sm-offset-0
+             col-xs-12 col-xs-offset-0" 
+             ng-controller="productDetailController">
+            <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides" style="width: 100%;">
+                <div uib-slide ng-repeat="slide in slides track by slide.id" index="slide.id" style="width: 100%;">
+                    <img ng-src="{{slide.image}}" class="productDetails-image">
+                </div>
+            </div>
+        </div>
 
-    <div class="row">
-        @Html.LabelFor(m => m.Price)
-        <label>{{product.Data.Price}}</label>
+        <div class="productDetails-info 
+             col-lg-6 col-lg-offset-0
+             col-md-10 col-md-offset-1
+             col-sm-12 col-sm-offset-0
+             col-xs-12 col-xs-offset-0">
+            <h3>{{product.Data.Name}}</h3>
+            <div>
+                @Html.LabelFor(m => m.Description)
+                <label>{{product.Data.Description}}</label>
+            </div>
+            <div>
+                @Html.LabelFor(m => m.Price)
+                <label>{{product.Data.Price}}</label>
+            </div>
+        </div>
+        <div ng-controller="productsCartController">
+            <a class="btn btn-default" href="/Products#!/" role="button">Назад</a>
+            <button class="btn btn-default" role="button" ng-click="AddToCart(product.Data.Id)">В корзину</button>
+        </div>
     </div>
+</div>
 
-    <div class="row">
-        <a href="/Products#!/">Назад</a>
-    </div>
 
-    </div>

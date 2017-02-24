@@ -3,38 +3,31 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <title>@ViewBag.Title - Интернет магазин детских кроваток</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/menu")
+    @Scripts.Render("~/bundles/angular")
+    <script src="~/Scripts/angularModules/productApp.js"></script>
+
+
 </head>
-<body>
-<div class="header">
-    <div class="container"  style="height: 100%">
-        <div class="row"  style="height: 100%">
-            <div class="col-lg-2 col-lg-offset-1
-                  col-md-1 col-md-offset-0
-                 col-sm-1 col-sm-offset-0
-                 col-xs-1 col-xs-offset-0" style="height: 100%;">
-                <img src="~/Content/images/logo.png"  style="height: 100%;"/>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-7 col-xs-8" style="height: 100%;">
-                <img src="~/Content/images/headerText.png" style="height: 70%;" />
-            </div>
+<body ng-app="productsApp">
+<div block-ui class="body-content-main container">
+    @Html.Partial("_LoginPartial")
+    @Html.Partial("_HeaderPartial")
+    @Html.Partial("_MenuBarPartial")
+    <div>
+        <div class="container body-content">
+            @RenderBody()
+            <hr/>
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Ponomarev Nikita Studio</p>
+            </footer>
         </div>
     </div>
 </div>
-
-<div class="underHeader">
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Ponomarev Nikita Studio</p>
-        </footer>
-    </div>
-</div>
-
-@Scripts.Render("~/bundles/jquery")
 @Scripts.Render("~/bundles/bootstrap")
 @RenderSection("scripts", required: false)
 </body>
