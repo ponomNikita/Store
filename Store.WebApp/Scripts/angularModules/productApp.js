@@ -6,6 +6,12 @@ var loginModel = {
     userName: ""
 }
 
+var productsCart = {
+    count: 0,
+    products: [],
+    sum: 0
+}
+
 var productsApp = angular.module('productsApp', ['ngRoute', 'ui.bootstrap', 'blockUI', 'ngSanitize']);
 
 
@@ -18,7 +24,7 @@ productsApp.factory("productsFactory",
             },
             find : function(id) {
                 var result = products.find(function(entity) {
-                    return ':' + entity.Data.Id === id;
+                    return entity.Data.Id == id;
                 });
 
                 return result;
@@ -66,7 +72,8 @@ productsApp.controller('productsController',
 
 productsApp.controller('productDetailController',
     function ($scope, $routeParams, productsFactory) {
-        var product = $scope.product = productsFactory.find($routeParams.id);
+
+        var product = $scope.product = productsFactory.find($routeParams.id.replace(':', ''));
 
         $scope.noWrapSlides = false;
         $scope.active = 0;
@@ -144,6 +151,28 @@ productsApp.controller('accountController', function ($scope, $uibModal, $log, $
 
 });
 
+productsApp
+    .controller('productsCartController', function ($scope, $location, productsFactory) {
+        $scope.AddToCart = function (id) {
+
+            var count = productsCart.count;
+            productsCart.count = count + 1;
+
+            var product = productsFactory.find(id);
+
+            productsCart.products.push(product);
+            productsCart.sum += product.Data.Price;
+
+            $scope.productsCart = productsCart;
+        };
+
+
+        $scope.ToCartList = function() {
+            $location.path("cartList");
+        };
+        $scope.productsCart = productsCart;
+    });
+
 productsApp.config(['$locationProvider', '$routeProvider',
     function config($locationProvider, $routeProvider) {
         //$locationProvider.html5Mode(true);
@@ -158,6 +187,11 @@ productsApp.config(['$locationProvider', '$routeProvider',
                 {
                     templateUrl: "Products/Details",
                     controller: "productDetailController"
+                })
+            .when('/cartList',
+                {
+                    templateUrl: "Products/CartList",
+                    controller: "productsCartController"
                 });
     }
 ]);

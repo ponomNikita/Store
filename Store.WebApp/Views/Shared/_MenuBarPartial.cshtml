@@ -1,8 +1,12 @@
-﻿<div class="cssmenu">
+﻿<div class="cssmenu" ng-controller="productsCartController">
     <ul>
         <li class="active"><a href="#">Главная</a></li>
         <li><a href="#">Доставка</a></li>
         <li><a href="#">О нас</a></li>
         <li><a href="#">Контакты</a></li>
+        <li class="rightalign" ng-click="ToCartList()">
+            <span>{{productsCart.count}}</span>
+            <span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span>
+        </li>
     </ul>
 </div>

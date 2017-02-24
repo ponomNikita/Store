@@ -11,7 +11,7 @@ body {
     background-size: 10%;
     box-shadow: 0 0 10px #000000;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
-    min-width: 430px;
+    min-width: 450px;
     position: relative;
 }
 
@@ -174,45 +174,10 @@ textarea {
     display: inline-block;   
 }
 
-
-/************Navigation bar************/
-
-/*.barButton {
-    background: #8cb3ea;
-    text-align: center;
-    display: inline-block;
-    width: 100%;
-    min-height: 30px;
-    min-width: 90px;
-    border: 1px solid #5591e6;
-    -ms-border-radius: 10px 10px 10px 10px;
-    border-radius: 10px 10px 10px 10px;
-    color: #e6f5fd;
-    font-weight: 900;
-    letter-spacing: 2px;
-}
-
-.navigationBar > a {
-    text-decoration: none;
-}
-
-.barButton:hover {
-    background: #5591e6;
-    cursor: pointer;
-}
-
-.barButtonActive {
-    background: #5591e6;
-}
-
-.tabMenu {
-    margin: 20px;
-}*/
-
 /*******************Buttons*************/
 .btn-default {
     margin-top: 25px;
-    margin-left: 10px;
+    margin-right: 10px;
 }
 .btn-default > a {
     text-decoration: none;
@@ -272,6 +237,17 @@ textarea {
 .cssmenu.align-right > ul > li > a {
   margin-right: 0;
   margin-left: -4px;
+}
+
+.cssmenu > ul > li.rightalign {
+    float:right;
+    right: 5px;
+    font-size: 30px;
+}
+
+.rightalign:hover {
+    color: #9a68d0;
+    cursor: pointer;
 }
     
 .cssmenu > ul > li > a {
@@ -337,6 +313,13 @@ textarea {
 .btn-info:hover, .btn-info:active, .btn-info:focus {
     background: #6278a3;
     border: none;
+}
+
+/****************** cartList *****************/
+
+.cartList img {
+    max-width: 50px;
+    height: auto;
 }
 
 

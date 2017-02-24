@@ -1,12 +1,11 @@
 ﻿
 <div ng-controller="accountController" class="modal-demo">
     <div id="unauthorizedView" class="loginButtons" ng-show="!loginModel.isAuthorize">
-        {{loginModel.userName}}
         <button class="btn btn-info btn-xs" ng-click="open('sm')">Войти</button>
         <button class="btn btn-info btn-xs">Зарегистрироваться</button>
     </div>
         <div id="authorizedView" class="loginButtons" ng-show="loginModel.isAuthorize">
-            {{loginModel.userName}}
+            <b>{{loginModel.userName}}</b>
             <button class="btn btn-info btn-xs" ng-click="Logout()">Выйти</button>
         </div>
 </div>

@@ -256,6 +256,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Account\Login.cshtml" />
     <Content Include="Views\Shared\_ModalLayout.cshtml" />
+    <Content Include="Views\Products\CartList.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
